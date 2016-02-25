@@ -47,9 +47,14 @@ $("#form2 button").click(function() {
 });
 
 // handle the mouseover event here
-
+$("#mouse img").mousemove(function(){
+    $(this).css("width","40%");
+});
 // handle the form events here
 
 $("#formEvents form").submit(function(event) {
-
+  event.preventDefault();
+  console.log($("#inputEmail3").val());
+  console.log($("#inputPassword3").val());
+  console.log($("#formEvents input[type=checkbox]").prop("checked"));
 });
