@@ -58,3 +58,28 @@ $("#formEvents form").submit(function(event) {
   console.log($("#inputPassword3").val());
   console.log($("#formEvents input[type=checkbox]").prop("checked"));
 });
+
+
+$("#animate1 img").one("mousemove",function(){
+    $("#animate1 img").animate({
+    "width":"70%"},3000);
+  });
+
+var dir = "left";
+$("#animate2 img").dblclick(function(){
+  $(this).css("position","static");
+  if(dir === "left"){
+    $(this).animate({"margin-left":"+=250px"},"slow");
+    dir = "right";
+  }else{
+    $(this).animate({"margin-left":"-=250px"},"slow");
+    dir = "left";
+  }
+});
+
+$("#animate3 img").click(function(){
+  $(this).fadeOut("slow",function(){
+    $("#animate3 img").attr("src","images/cat.jpg");
+    $(this).fadeIn("slow",function(){});
+  });
+});
